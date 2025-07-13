@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@J_sh | OnlyFans</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0F0F0F;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .header {
+            background: linear-gradient(90deg, #FF0080, #8000FF);
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(255, 0, 128, 0.3);
+        }
+        .profile {
+            margin-top: 20px;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #FF0080;
+            object-fit: cover;
+        }
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .bio {
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .stat {
+            background: #1E1E1E;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .media-item {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .media-item:hover {
+            transform: scale(1.03);
+        }
+        .media-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: blur(12px) brightness(0.7);
+        }
+        .lock-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        .lock-icon {
+            font-size: 24px;
+            color: #FF0080;
+            margin-bottom: 5px;
+        }
+        .see-more {
+            background: #FF0080;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .subscribe-btn {
+            background: #FF0080;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .subscribe-btn:hover {
+            background: #E00070;
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            color: #888;
+            font-size: 12px;
+        }
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        #scare-video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner {
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-top: 5px solid #FF0080;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>OnlyFans</h1>
+    </div>
+
+    <div class="profile">
+        <img src="images/WIN_20250205_21_03_48_Pro.jpg" class="profile-pic" alt="Profile">
+        <div class="username">@J_sh</div>
+        <div class="bio">Exclusive content just for you 🥰</div>
+        
+        <div class="stats">
+            <div class="stat">Posts: 12</div>
+            <div class="stat">Fans: 126</div>
+            <div class="stat">Rating: ★★★</div>
+        </div>
+    </div>
+
+    <div class="media-grid">
+        <div class="media-item" onclick="triggerScare()">
+            <img src="https://i.imgur.com/SafeImage1.jpg" alt="Blurred content">
+            <div class="lock-overlay">
+                <div class="lock-icon">🔒</div>
+                <button class="see-more">SEE MORE</button>
+            </div>
+        </div>
+        <div class="media-item" onclick="triggerScare()">
+            <img src="https://i.imgur.com/SafeImage2.jpg" alt="Blurred content">
+            <div class="lock-overlay">
+                <div class="lock-icon">🔒</div>
+                <button class="see-more">SEE MORE</button>
+            </div>
+        </div>
+        <div class="media-item" onclick="triggerScare()">
+            <img src="https://i.imgur.com/SafeImage3.jpg" alt="Blurred content">
+            <div class="lock-overlay">
+                <div class="lock-icon">🔒</div>
+                <button class="see-more">SEE MORE</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="subscribe-btn" onclick="triggerScare()">SEE MORE CONTENT</button>
+
+    <div class="footer">
+        © 2024 OnlyFans. This content is exclusive to subscribers.
+    </div>
+
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <div>Loading your exclusive content...</div>
+    </div>
+
+    <div id="video-container">
+        <video id="scare-video" autoplay muted>
+            <source src="images/vlipsy-creepy-face-jump-scare-3hEsFXt9.mp4" type="video/mp4">
+            Your browser doesn't support HTML5 video.
+        </video>
+    </div>
+
+    <script>
+        function triggerScare() {
+            // Show loading screen
+            document.getElementById('loading').style.display = 'flex';
+            
+            // Change button text
+            document.querySelector('.subscribe-btn').textContent = "LOADING...";
+            
+            // After 2 seconds, show the video
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                const videoContainer = document.getElementById('video-container');
+                const scareVideo = document.getElementById('scare-video');
+                
+                videoContainer.style.display = 'flex';
+                scareVideo.play();
+                
+                // Play sound effect (optional)
+                const audio = new Audio('images/vlipsy-creepy-face-jump-scare-3hEsFXt9.mp3');
+                audio.play();
+                
+                // After video ends, redirect or close
+                scareVideo.onended = function() {
+                    videoContainer.style.display = 'none';
+                    // Optional: Redirect somewhere after scare
+                    // window.location.href = "https://example.com";
+                };
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
